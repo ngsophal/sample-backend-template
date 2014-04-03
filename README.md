@@ -23,3 +23,6 @@ To run this backend project : git clone from git hub : https://github.com/sophea
  a) monitor api : http://localhost:8080/sample/api/monitor/v10
  
  b) category api: http://localhost:8080/sample/api/category/v1/all
+
+
+If you want to change database type :  have a look on file persistence-db.xml
