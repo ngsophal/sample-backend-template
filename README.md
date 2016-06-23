@@ -26,3 +26,12 @@ To run this backend project : git clone from git hub : https://github.com/sophea
 
 
 If you want to change database type :  have a look on file persistence-db.xml
+
+
+8 : Tool creating PDF Documents With Wkhtmltopdf (converting from html to pdf)
+
+To use this, Your server must install wkhtmltopdf : http://wkhtmltopdf.org/downloads.html
+
+It support all platforms window / linux / MacOS
+
+ex : http://localhost:8080/api/htmltopdf/v1?url=http://www.google.com

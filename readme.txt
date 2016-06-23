@@ -9,3 +9,6 @@
 -7 : sample APIs :
 a) monitor api : http://localhost:8080/api/monitor/v10
 b) category api: http://localhost:8080/api/category/v1/all
+
+8 - tool creating PDF Documents With Wkhtmltopdf (converting from html to pdf)
+http://localhost:8080/api/htmltopdf/v1?url=http://www.google.com
