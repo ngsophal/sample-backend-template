@@ -35,3 +35,56 @@ To use this, Your server must install wkhtmltopdf : http://wkhtmltopdf.org/downl
 It support all platforms window / linux / MacOS
 
 ex : http://localhost:8080/api/htmltopdf/v1?url=http://www.google.com
+
+```java
+public void converthtmlToPdf(HttpServletRequest request, HttpServletResponse response, @RequestParam String url) {
+        LOGGER.info("/htmltopdf/v1 - {}", url);
+        
+            //write to response
+            final PdfFileRequest pdfFile = new PdfFileRequest();
+            final String tempName = String.format("SYS-%s.pdf", RandomStringUtils.random(10, true, true));
+            pdfFile.setFileName(tempName);
+            pdfFile.setSourceHtmlUrl(url);
+            PdfFileCreator.writePdfToResponse(pdfFile, response);
+    }
+    
+ Class PdfFileCreator.java
+ ==========================
+ public static void writePdfToResponse(PdfFileRequest fileRequest, HttpServletResponse response) {
+        final String pdfFileName = fileRequest.getFileName();
+        requireNotEmpty(pdfFileName, "File name of the created PDF cannot be empty");
+ 
+        String sourceHtmlUrl = fileRequest.getSourceHtmlUrl();
+        requireNotEmpty(sourceHtmlUrl, "Source HTML url cannot be empty");
+ 
+        final List<String> pdfCommand = Arrays.asList(
+                "wkhtmltopdf",
+                sourceHtmlUrl,
+                "-"
+        );
+ 
+        ProcessBuilder pb = new ProcessBuilder(pdfCommand);
+        Process pdfProcess;
+ 
+        try {
+            pdfProcess = pb.start();
+ 
+            try(InputStream in = pdfProcess.getInputStream()) {
+                writeCreatedPdfFileToResponse(in, response);
+                waitForProcessBeforeContinueCurrentThread(pdfProcess);
+                requireSuccessfulExitStatus(pdfProcess);
+                setResponseHeaders(response, fileRequest);
+            }
+            catch (Exception ex) {
+                writeErrorMessageToLog(ex, pdfProcess);
+                throw new RuntimeException("PDF generation failed");
+            }
+            finally {
+                pdfProcess.destroy();
+            }
+        }
+        catch (IOException ex) {
+            throw new RuntimeException("PDF generation failed");
+        }
+    }
+```
