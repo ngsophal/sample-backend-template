@@ -25,7 +25,7 @@ public class HtmlToPdfController {
     private static final Logger LOGGER = LoggerFactory.getLogger(HtmlToPdfController.class);
 
     @RequestMapping(value = "v1", method = RequestMethod.GET)
-    public void monitor(HttpServletRequest request, HttpServletResponse response, @RequestParam String url) {
+    public void converthtmlToPdf(HttpServletRequest request, HttpServletResponse response, @RequestParam String url) {
         LOGGER.info("/htmltopdf/v1 - {}", url);
         
             //write to response

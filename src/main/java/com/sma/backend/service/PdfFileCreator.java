@@ -37,7 +37,7 @@ public class PdfFileCreator {
         String sourceHtmlUrl = fileRequest.getSourceHtmlUrl();
         requireNotEmpty(sourceHtmlUrl, "Source HTML url cannot be empty");
  
-        List<String> pdfCommand = Arrays.asList(
+        final List<String> pdfCommand = Arrays.asList(
                 "wkhtmltopdf",
                 sourceHtmlUrl,
                 "-"
