@@ -6,7 +6,7 @@ rest-api backend none-gae : tomcat | jetty
 
 To run this backend project : git clone from git hub : https://github.com/sophea/sample-backend-template
 
-1 : install Java JDK 1.7 or later version , maven 2 or 3 
+1 : install Java JDK 1.8 or later version , maven 2 or 3 
 
 2 : install mariaDb database (https://downloads.mariadb.org/)
 

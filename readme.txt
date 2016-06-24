@@ -1,6 +1,6 @@
 - To run this backend project :
 
--1 : install maven 2 or 3  
+-1 : install maven 2 or 3  / JDK 1.8
 -2 : install mariaDb database
 -3 : import sql file in mysql console : sample-install.sql 
 -4 : go to this project location by console
