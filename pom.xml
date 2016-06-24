@@ -10,8 +10,8 @@
     
      <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>3.1.1.RELEASE</spring.version>
-        <spring.security.version>3.1.0.RELEASE</spring.security.version>
+        <spring.version>4.2.6.RELEASE</spring.version>
+        <spring.security.version>4.0.4.RELEASE</spring.security.version>
         <logging.level>ALL</logging.level>
         <downloadSources>true</downloadSources>
         <javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
@@ -104,16 +104,12 @@
             <scope>runtime</scope>
         </dependency>
         
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-core-asl</artifactId>
-            <version>1.9.9</version>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.9</version>
-        </dependency>
+          <dependency>
+              <groupId>com.fasterxml.jackson.core</groupId>
+              <artifactId>jackson-databind</artifactId>
+              <version>2.6.7</version>
+          </dependency>
+
       
         <dependency>
             <groupId>commons-beanutils</groupId>
@@ -168,11 +164,6 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-asm</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
