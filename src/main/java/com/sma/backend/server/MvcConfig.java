@@ -1,5 +1,6 @@
 package com.sma.backend.server;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +57,10 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
         skipNullMapper.init();
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
         converter.setObjectMapper(skipNullMapper);
+        
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
+        skipNullMapper.setDateFormat(formatter);
+        
         converters.add(converter);
     }
     // -------------- Serving Resources ----------------------

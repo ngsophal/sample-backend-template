@@ -1,7 +1,7 @@
 sample-backend-template
 =======================
 
-rest-api backend none-gae : tomcat | jetty
+rest-api backend none-gae : tomcat | jetty + database mybatis frameworks
 
 
 To run this backend project : git clone from git hub : https://github.com/sophea/sample-backend-template
@@ -23,6 +23,7 @@ To run this backend project : git clone from git hub : https://github.com/sophea
  a) monitor api : http://localhost:8080/api/monitor/v10
  
  b) category api: http://localhost:8080/api/category/v1/all
+ b) category api: http://localhost:8080/api/category/v1/2
 
 
 If you want to change database type :  have a look on file persistence-db.xml

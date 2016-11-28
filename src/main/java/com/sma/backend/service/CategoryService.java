@@ -25,8 +25,8 @@ public class CategoryService {
         
         return dList;
     }
-    @Autowired
-    public void setDao(CategoryDao dao) {
-        this.dao = dao;
+    public JCategory getDetails(long id) {
+        return dao.findById(id);
     }
+    
 }

@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -46,6 +47,14 @@ public class CategoryController {
         LOG.debug(" ============== If-Modified-Since {} ", since);
 
         return service.getAll();
+    }
+
+    @RequestMapping(value = "v1/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public JCategory getDetails(HttpServletRequest request, @PathVariable Long id) {
+        
+
+        return service.getDetails(id);
     }
 
 
