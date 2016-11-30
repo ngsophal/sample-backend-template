@@ -1,3 +1,8 @@
+![Travis Build](https://travis-ci.org/sophea/sample-backend-template.svg?branch=master)
+[![Codecov](https://codecov.io/github/sophea/sample-backend-template/coverage.svg?branch=master)](https://codecov.io/github/sophea/sample-backend-template?branch=master)
+![Java 8 required](https://img.shields.io/badge/java-8-brightgreen.svg)
+[![Sputnik](https://sputnik.ci/conf/badge)](https://sputnik.ci/app#/builds/sophea/sample-backend-template)
+
 sample-backend-template
 =======================
 
