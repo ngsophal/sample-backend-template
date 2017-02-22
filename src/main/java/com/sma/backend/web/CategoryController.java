@@ -20,7 +20,7 @@ import org.springframework.web.context.request.WebRequest;
 import com.sma.backend.json.JCategory;
 
 /**
- * @author sophea <a href='mailto:sm@goldengekko.com'> sophea </a>
+ * @author sophea <a href='mailto:sopheamak@gmail.com> sophea </a>
  * @version $id$ - $Revision$
  * @date 2012
  */

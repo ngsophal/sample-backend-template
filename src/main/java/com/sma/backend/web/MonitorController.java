@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sma.backend.json.JMonitor;
-import com.sma.backend.service.PdfFileCreator;
-import com.sma.backend.service.PdfFileRequest;
 import com.sma.backend.service.Version;
 
 /**
@@ -39,19 +36,7 @@ public class MonitorController {
         monitor.setMillis(System.currentTimeMillis());
         monitor.setIp(request.getRemoteAddr());
         
-        String url= request.getParameter("url");
-        if (url != null) {
-            //write to response
-            PdfFileRequest pdfFile = new PdfFileRequest();
-            //
-           // File temp = File.createTempFile("System", RandomStringUtils.random(10, true, true) + ".pdf");
-            
-            String tempName = String.format("SYS-%s.pdf", RandomStringUtils.random(10, true, true));
-            pdfFile.setFileName(tempName);
-            LOGGER.info(tempName);
-            pdfFile.setSourceHtmlUrl(url);
-            PdfFileCreator.writePdfToResponse(pdfFile, response);
-        }
+    
         return new ResponseEntity<JMonitor>(monitor, HttpStatus.OK);
     }
   

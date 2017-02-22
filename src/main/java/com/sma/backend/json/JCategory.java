@@ -1,27 +1,18 @@
 package com.sma.backend.json;
 
 import java.io.Serializable;
-import java.util.Map;
 
 public class JCategory implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
 
     /** Unique id for this Entity in the database */
     private Long id;
     
-    /** Set by mardao to whom this entity was created by */
-    private String createdBy;
-    
-    /** Milliseconds since 1970 when this Entity was created in the database */
-    private Long createdDate;
     
     /** Possible states are DELETED (-1), PENDING (0), ACTIVE (1) and REDEEMED (2) */
     private Long state;
-    
-    /** Set by mardao to whom this entity was updated by last time */
-    private String updatedBy;
-    
-    /** Milliseconds since 1970 when this Entity was last updated in the database */
-    private Long updatedDate;
     
     /** a one-liner category name (default language) */
     private String              name;
@@ -110,22 +101,6 @@ public class JCategory implements Serializable {
         this.id = id;
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public Long getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Long createdDate) {
-        this.createdDate = createdDate;
-    }
-
     public Long getState() {
         return state;
     }
@@ -134,20 +109,5 @@ public class JCategory implements Serializable {
         this.state = state;
     }
 
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
-    public Long getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(Long updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
+   
 }

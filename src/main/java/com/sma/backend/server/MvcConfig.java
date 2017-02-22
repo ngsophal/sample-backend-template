@@ -3,6 +3,7 @@ package com.sma.backend.server;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -28,7 +29,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = "com.sma.backend")
 @EnableTransactionManagement
 @ImportResource(value = {"classpath:/persistence-db.xml"})
-//@MapperScan("com.sma.backend.dao")
+@MapperScan("com.sma.backend.dao")
 @PropertySource(name="application",value={"classpath:/application.properties"})
 @Lazy
 public class MvcConfig extends WebMvcConfigurerAdapter {
