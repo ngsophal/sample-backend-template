@@ -1,8 +1,6 @@
 package com.sma.backend.service;
 
 import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +13,6 @@ public class CategoryService {
     @Autowired
     private CategoryDao dao;
     
-    public List<JCategory> getCategoriesByType(String type) {
-        return Collections.EMPTY_LIST;
-    }
-    
     
     public Collection<JCategory> getAll() {
         Collection<JCategory> dList= dao.getAll();
@@ -28,5 +22,12 @@ public class CategoryService {
     public JCategory getDetails(long id) {
         return dao.findById(id);
     }
+    public void create(JCategory jCategory) {
+        dao.add(jCategory);
+    }
     
+    public void update(Long id, JCategory jCategory) {
+        
+        dao.update(jCategory);
+    }
 }

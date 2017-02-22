@@ -32,11 +32,6 @@ public class JCategory implements Serializable {
     /** key to the category asset generic field for each app specific*/
     private String              appArg0;
 
-    /** Total child records. could be offers, brands .. */
-    private Integer             totalChildRecords;
-
-    /** key is langCode, value is localized name */
-    private Map<String, String> localizedNames;
 
     /** If this is a sub-category, the id of its parent */
     private Long                parentId;
@@ -55,14 +50,6 @@ public class JCategory implements Serializable {
 
     public void setParentId(Long parentId) {
         this.parentId = parentId;
-    }
-
-    public Map<String, String> getLocalizedNames() {
-        return localizedNames;
-    }
-
-    public void setLocalizedNames(Map<String, String> localizedNames) {
-        this.localizedNames = localizedNames;
     }
 
     public String getName() {
@@ -105,21 +92,6 @@ public class JCategory implements Serializable {
 
     public void setLogoUrl(String logoUrl) {
         this.logoUrl = logoUrl;
-    }
-
-    /**
-     * @return the totalChildRecords
-     */
-    public Integer getTotalChildRecords() {
-        return totalChildRecords;
-    }
-
-    /**
-     * @param totalChildRecords
-     *            the totalChildRecords to set
-     */
-    public void setTotalChildRecords(Integer totalChildRecords) {
-        this.totalChildRecords = totalChildRecords;
     }
 
     public Long getLevelOrder() {

@@ -10,7 +10,7 @@ public interface Dao <T extends Object>{
     
     T findById(@Param("id") long id);
     
-    //void add(T domain);
+    void add(T domain);
         
     void update(T domain);
     
