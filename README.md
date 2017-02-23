@@ -15,7 +15,7 @@ To run this backend project : git clone from git hub : https://github.com/sophea
 
 2 : install MySQL/mariaDb database (https://downloads.mariadb.org/)
 
-3 : import sql file in mysql console : sample-mybatis.sql 
+3 : import sql file in mysql console : src/main/sql/sample-mybatis.sql 
 
 4 : go to this project location by console
 
@@ -25,12 +25,12 @@ To run this backend project : git clone from git hub : https://github.com/sophea
 
 7 : sample APIs :
 
- a) monitor api : http://localhost:8080/api/monitor/v10
  
- b) category api: http://localhost:8080/api/category/v1/all
+ a) category api: http://localhost:8080/api/category/v1/all
  
- c) category api: http://localhost:8080/api/category/v1/2
+ b) category api: http://localhost:8080/api/category/v1/2
 
+ c) monitor api : http://localhost:8080/api/monitor/v10
 
 If you want to change database type :  have a look on file persistence-db.xml
 

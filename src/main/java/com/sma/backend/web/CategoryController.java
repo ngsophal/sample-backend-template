@@ -25,7 +25,7 @@ import com.sma.backend.json.JCategory;
  * @date 2012
  */
 @Controller
-@RequestMapping(value = "category")
+@RequestMapping(value = {"category", "categories" })
 public class CategoryController {
 
     private static final Logger LOG = LoggerFactory.getLogger(CategoryController.class);
